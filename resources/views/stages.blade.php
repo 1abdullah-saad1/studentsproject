@@ -1,14 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
-                    <livewire:stages />
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-body">
+            <livewire:stages />
         </div>
     </div>
 @endsection
