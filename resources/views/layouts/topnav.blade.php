@@ -11,6 +11,14 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ Route('Student.index') }}">الطلبة <span class="sr-only"></span></a>
                     </li>
+                    <li class="nav-item active">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">المرحلة الاولى</a>
+                            <a class="dropdown-item" href="#">المرحلة الثانية</a>
+                            <a class="dropdown-item" href="#">المرحلة الثالثة</a>
+                            <a class="dropdown-item" href="#">المرحلة الرابعة</a>
+                        </div>
+                    </li>
                 @endrole
                 <li class="nav-item">
                     <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">المراحل</a>

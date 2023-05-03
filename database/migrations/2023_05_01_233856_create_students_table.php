@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('gender', ['male', 'female']);
+            $table->date('birth_date');
+            $table->string('gov');
+            $table->string('address');
+            $table->enum('study_type', ['m', 'e']);
+            $table->boolean('is_parallel')->default(0);
+            $table->foreignId('acceptance_year')->constrained('academic_years');
             $table->timestamps();
         });
     }

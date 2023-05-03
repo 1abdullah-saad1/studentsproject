@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\AcademicYears;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +22,9 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             LaratrustSeeder::class,
+            AcademicYearsSeeder::class,
+            StagesSeeder::class,
+            CoursesSeeder::class
         ]);
     }
 }

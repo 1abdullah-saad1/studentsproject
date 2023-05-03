@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,7 +21,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'role:chairman'])->group(function () {
-    Route::resource('Student', App\Http\Controllers\StudentController::class);
+    Route::resource('Student', 'App\Http\Controllers\StudentController'::class);
+    Route::middleware(['auth'])->prefix('/stages/{stage_id}')->group(function () {
+        Route::get('/', ['App\Http\Controllers\StagesController'::class, 'index']);
+    });
 });
