@@ -16,30 +16,38 @@ class Students extends Component
         'newStudent.gov' => 'required',
         'newStudent.address' => 'required',
         'newStudent.study_type' => 'required',
-        'newStudent.is_parallel' => 'required',
+        'newStudent.is_parallel' => '',
         'SearchOption' => ''
         //'newStudent.acceptance_year' => 'required',
     ];
     public function render()
     {
+        $this->StudentsList = Student::where('status', $this->SearchOption)->get();
+
         return view('livewire.students');
     }
     public function mount()
     {
         $this->academicYear = AcademicYears::where('is_active', 1)->first();
         $this->newStudent = new Student();
+        $this->newStudent->is_parallel = 0;
+
         $this->SearchOption = 1;
         $this->StudentsList = Student::where('status', $this->SearchOption)->get();
     }
     public function saveStudent()
     {
         $this->validate();
+        $this->newStudent->acceptance_year = $this->academicYear->id;
+
         $this->newStudent->save();
+
         $this->newStudent = new Student();
+        $this->newStudent->is_parallel = 0;
     }
     public function selectStudent($student_id)
     {
-        $this->newStudent = Students::find($student_id);
+        $this->newStudent = Student::find($student_id);
     }
     public function updated($propertyName)
     {
