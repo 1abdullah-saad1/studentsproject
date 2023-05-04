@@ -21,6 +21,9 @@ return new class extends Migration
             $table->enum('study_type', ['m', 'e']);
             $table->boolean('is_parallel')->default(0);
             $table->foreignId('acceptance_year')->constrained('academic_years');
+            $table->boolean('is_dissmised')->default(0);
+            $table->unsignedInteger('current_stage')->default(1);
+            $table->unsignedInteger('status')->default(1);
             $table->timestamps();
         });
     }

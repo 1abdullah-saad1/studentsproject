@@ -48,7 +48,8 @@
                             <td>{{ $Course_item->arabic_name }}</td>
                             <td>{{ $Course_item->credit }}</td>
                             <td>{{ $courseTypeArray[$Course_item->type] }}</td>
-                            <td>{{ $users->firstWhere('id', $Course_item->user_id)->name }}</td>
+                            <td>{{ $Course_item->user_id !== null ? $users->firstWhere('id', $Course_item->user_id)->name : 'لم يتم اضافة التدريسي الى المادة' }}
+                            </td>
                             <td>
                                 {{ $Course_item->is_active ? 'فعال' : 'متوقف' }}
                             </td>

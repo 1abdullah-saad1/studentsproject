@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             LaratrustSeeder::class,
             AcademicYearsSeeder::class,
             StagesSeeder::class,
-            CoursesSeeder::class
+            UsersSeeder::class,
+            CoursesSeeder::class,
         ]);
     }
 }

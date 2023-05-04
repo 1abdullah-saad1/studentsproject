@@ -9,7 +9,7 @@
             <ul class="navbar-nav mr-auto">
                 @role('chairman')
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ Route('Student.index') }}">الطلبة <span class="sr-only"></span></a>
+                        <a class="nav-link" href="{{ Route('Students') }}">الطلبة <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item active">
                         <div class="dropdown">
