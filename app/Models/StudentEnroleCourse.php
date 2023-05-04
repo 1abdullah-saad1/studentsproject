@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Enums\EnrolmentStatusEnum;
 
 class StudentEnroleCourse extends Model
 {
@@ -11,6 +12,9 @@ class StudentEnroleCourse extends Model
         'student_id',
         'stage_id',
         'academic_year_id',
+    ];
+    protected $casts = [
+        'status' => EnrolmentStatusEnum::class
     ];
     use HasFactory;
     /**

@@ -11,6 +11,8 @@ class Stages extends Model
     protected $fillable = [
         'name',
     ];
+    protected $with = ['activeCourses'];
+
     /**
      * Get all of the courses for the Stages
      *
@@ -20,7 +22,7 @@ class Stages extends Model
     {
         return $this->hasMany(Courses::class, 'stage_id', 'id');
     }
-    public function active_courses()
+    public function activeCourses()
     {
         return $this->hasMany(Courses::class, 'stage_id', 'id')->where('is_active', 1);
     }
