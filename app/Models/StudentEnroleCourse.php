@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class StudentEnroleCourse extends Model
 {
+    protected $fillable = [
+        'student_id',
+        'stage_id',
+        'academic_year_id',
+    ];
     use HasFactory;
     /**
      * Get the student that owns the StudentEnroleCourse
