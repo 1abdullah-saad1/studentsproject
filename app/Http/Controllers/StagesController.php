@@ -8,7 +8,8 @@ class StagesController extends Controller
 {
     public function index(Request $request)
     {
-        $request->stageid;
-        return view('stages')->with(['stage_id' => $request->stageid]);
+        $request->stage_id;
+
+        return view('stages')->with(['stage_id' => $request->stage_id]);
     }
 }

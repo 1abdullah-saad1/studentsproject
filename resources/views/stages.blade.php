@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <livewire:stages />
+            <livewire:stages :stage_id="$stage_id" />
         </div>
     </div>
 @endsection

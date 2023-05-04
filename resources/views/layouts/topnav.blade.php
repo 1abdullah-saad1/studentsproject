@@ -12,11 +12,17 @@
                         <a class="nav-link" href="{{ Route('Student.index') }}">الطلبة <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item active">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">المرحلة الاولى</a>
-                            <a class="dropdown-item" href="#">المرحلة الثانية</a>
-                            <a class="dropdown-item" href="#">المرحلة الثالثة</a>
-                            <a class="dropdown-item" href="#">المرحلة الرابعة</a>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                االمقررات
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="{{ Route('stage_courses', 1) }}">المرحلة الاولى</a></li>
+                                <li><a class="dropdown-item" href="{{ Route('stage_courses', 2) }}">المرحلة الثانية</a></li>
+                                <li><a class="dropdown-item" href="{{ Route('stage_courses', 3) }}">المرحلة الثالثة</a></li>
+                                <li><a class="dropdown-item" href="{{ Route('stage_courses', 4) }}">المرحلة الثالثة</a></li>
+                            </ul>
                         </div>
                     </li>
                 @endrole
