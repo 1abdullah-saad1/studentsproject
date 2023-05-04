@@ -15,9 +15,10 @@
                                 الطلبة
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="{{ Route('Students') }}">قوائم الطلبة</a></li>
+                                <li><a class="dropdown-item" href="{{ Route('Students') }}">اضافة الطلبة</a></li>
                                 <li><a class="dropdown-item" href="{{ Route('StudentsEnrolments') }}">مباشرة الطلاب</a></li>
-                                <li><a class="dropdown-item" href="{{ Route('Students') }}">العقوبات الانظباطية</a></li>
+                                <li><a class="dropdown-item" href="{{ Route('StudentsPunishments') }}">العقوبات الانظباطية</a>
+                                </li>
                             </ul>
                         </div>
                     </li>

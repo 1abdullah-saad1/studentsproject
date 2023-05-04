@@ -25,6 +25,7 @@ Route::get('/home', ['App\Http\Controllers\HomeController'::class, 'index'])->na
 Route::middleware(['auth', 'role:chairman'])->prefix('/students')->group(function () {
     Route::get('/', ['App\Http\Controllers\StudentController'::class, 'index'])->name('Students');
     Route::get('/enrolments', ['App\Http\Controllers\StudentController'::class, 'enrolments'])->name('StudentsEnrolments');
+    Route::get('/punishments', ['App\Http\Controllers\StudentController'::class, 'punisments'])->name('StudentsPunishments');
 });
 Route::middleware(['auth'])->prefix('/stage_courses/{stage_id}')->group(function () {
     Route::get('/', ['App\Http\Controllers\StagesController'::class, 'index'])->name('stage_courses');

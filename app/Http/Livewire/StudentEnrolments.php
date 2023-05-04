@@ -18,7 +18,7 @@ class StudentEnrolments extends Component
     public function render()
     {
         if ($this->searchInput != 'id') {
-            $this->searchResults = Student::where('name', 'like', '%' . $this->searchInput . '%')->get();
+            $this->searchResults = Student::where('name', 'like', '%' . $this->searchInput . '%')->where('is_dissmised', 0)->get();
         } else {
             $this->searchResults = [];
         }

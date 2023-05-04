@@ -9,5 +9,6 @@ enum EnrolmentStatusEnum: string
     case SucseedSecondAttempt = 'ناجح دور ثاني';
     case FialCourese = 'راسب بالمواد الدراسية';
     case FialAbsence = 'راسب بالغياب';
+    case FialCheet = 'راسب الغش';
     case Posponded = 'مؤجل';
 }
