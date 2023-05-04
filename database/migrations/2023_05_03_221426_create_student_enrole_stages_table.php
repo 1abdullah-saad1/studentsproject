@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('student_enrole_stages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id');
+            $table->foreignId('stage_id');
+            $table->foreignId('academic_year_id');
+            $table->enum('status', ['cont', 'pass', 'fld', 'punf'])->default('cont');
+            $table->unsignedDouble('average')->default(0.0);
             $table->timestamps();
         });
     }

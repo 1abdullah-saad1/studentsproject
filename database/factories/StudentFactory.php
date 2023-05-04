@@ -17,7 +17,14 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'gender' => 'male',
+            'birth_date' => '1999-01-01',
+            'gov' => 'نينوى',
+            'address' => 'البيت',
+            'study_type' => 'm',
+            'acceptance_year' => '33',
+            'is_parallel' => false,
         ];
     }
 }

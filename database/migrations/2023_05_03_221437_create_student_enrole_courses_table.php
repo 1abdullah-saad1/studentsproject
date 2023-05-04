@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('student_enrole_courses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id');
+            $table->foreignId('course_id');
+            $table->unsignedDouble('saay_score')->default(0.0);
+            $table->unsignedDouble('first_attempt')->default(0.0);
+            $table->unsignedDouble('second_attempt')->default(0.0);
+            $table->unsignedDouble('extra_score')->default(0.0);
+            $table->unsignedInteger('credits');
+            $table->unsignedDouble('final_degree')->default(0.0);
+            $table->unsignedDouble('weighted_avarage')->default(0.0);
+            $table->boolean('is_passed')->default(0);
             $table->timestamps();
         });
     }

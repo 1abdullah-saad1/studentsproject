@@ -8,10 +8,21 @@
         <div id="my-nav" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 @role('chairman')
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ Route('Students') }}">الطلبة <span class="sr-only"></span></a>
+                    <li class="nav-item ">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                الطلبة
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="{{ Route('Students') }}">قوائم الطلبة</a></li>
+                                <li><a class="dropdown-item" href="{{ Route('Students') }}">مباشرة الطلاب</a></li>
+                                <li><a class="dropdown-item" href="{{ Route('Students') }}">العقوبات الانظباطية</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item active">
+                    <li>-</li>
+                    <li class="nav-item ">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">

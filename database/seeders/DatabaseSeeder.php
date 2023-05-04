@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             StagesSeeder::class,
             UsersSeeder::class,
             CoursesSeeder::class,
+            StudentSeeder::class,
         ]);
     }
 }
