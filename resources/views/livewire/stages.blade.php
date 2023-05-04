@@ -15,7 +15,7 @@
             </thead>
             <tbody>
                 @php
-                    $index = 0;
+                    $index = 1;
                 @endphp
                 @foreach ($Courses as $Course_item)
                     @if ($newCourse->id == $Course_item->id)
@@ -40,10 +40,10 @@
 
                                 </div>
                             </td>
-                            <td><a class="btn btn-success" role="button" wire:click="saveCourse()">اضافة</a></td>
+                            <td><a class="btn btn-success" role="button" wire:click="saveCourse()">خزن</a></td>
                         </tr>
                     @else
-                        <tr class="table-info">
+                        <tr class="table-secondary">
                             <td>{{ $index++ }}</td>
                             <td>{{ $Course_item->arabic_name }}</td>
                             <td>{{ $Course_item->credit }}</td>
@@ -53,10 +53,14 @@
                                 {{ $Course_item->is_active ? 'فعال' : 'متوقف' }}
                             </td>
                             <td><a class="btn btn-warning" role="button"
-                                    wire:click="selectCourse({{ $Course_item->id }})">اضافة</a></td>
+                                    wire:click="selectCourse({{ $Course_item->id }})">تعديل</a></td>
                         </tr>
                     @endif
                 @endforeach
+            </tbody>
+
+            <tfoot class="table-warning">
+
                 @if ($newCourse->id == null)
                     <tr class="table-info">
                         <td></td>
@@ -83,7 +87,7 @@
                     </tr>
 
                 @endif
-            </tbody>
+            </tfoot>
         </table>
     </div>
 </div>
