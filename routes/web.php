@@ -30,3 +30,6 @@ Route::middleware(['auth', 'role:chairman'])->prefix('/students')->group(functio
 Route::middleware(['auth'])->prefix('/stage_courses/{stage_id}')->group(function () {
     Route::get('/', ['App\Http\Controllers\StagesController'::class, 'index'])->name('stage_courses');
 });
+Route::middleware(['auth'])->prefix('/exams/{stage_id}')->group(function () {
+    Route::get('/', ['App\Http\Controllers\StagesController'::class, 'exams'])->name('exams');
+});

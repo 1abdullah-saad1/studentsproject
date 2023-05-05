@@ -12,4 +12,10 @@ class StagesController extends Controller
 
         return view('stages')->with(['stage_id' => $request->stage_id]);
     }
+    public function exams(Request $request)
+    {
+        $request->stage_id;
+
+        return view('exams')->with(['stage_id' => $request->stage_id]);
+    }
 }
