@@ -7,14 +7,13 @@ use App\Models\Courses;
 use App\Models\Stages;
 use App\Models\StudentEnroleCourse;
 use Livewire\Component;
-use PhpOffice\PHP;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Exams extends Component
 {
     public $Stage, $activeAcademicYear;
-    public $studentCoursesEnrolments, $activeCourses;
-    public $currentPage = 1;
+    public $studentCoursesEnrolments, $activeCourses, $selectedCouresId;
+    public $currentPage = 0;
+    protected $listeners = ['changePage'];
 
     public function render()
     {
@@ -25,10 +24,11 @@ class Exams extends Component
         $this->Stage = Stages::find($stage_id);
         $this->activeCourses = $this->Stage->activeCourses->sortBy('id');
         $this->activeAcademicYear = AcademicYears::where('is_active', 1)->first();
-        $sapratesheet = new IOFactory();
     }
-    public function changePage($page_id)
+    public function changePage($page_id, $type)
     {
         $this->currentPage = $page_id;
+        $this->selectedCouresId = $page_id;
+        $this->emit('pageChanged', $page_id, $type);
     }
 }

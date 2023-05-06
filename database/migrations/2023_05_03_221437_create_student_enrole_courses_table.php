@@ -23,6 +23,7 @@ return new class extends Migration
             $table->unsignedInteger('credits');
             $table->unsignedDouble('final_degree')->default(0.0);
             $table->unsignedDouble('weighted_avarage')->default(0.0);
+            $table->boolean('is_second_attempt')->default(0);
             $table->boolean('is_passed')->default(0);
             $table->timestamps();
         });
